@@ -1,0 +1,24 @@
+﻿<body>
+    <h1>Функции</h1>
+    <h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-2">
+    @{           
+        foreach (var fun in Model.AllFun)
+            {
+        <div class="col-lg-4">
+            <img class="img-thumbnail" src="@fun.img" alt="@fun.name" />
+            <h2>@fun.name</h2>
+            <p> @fun.shortDecs</p>
+            <p> @fun.longDecs</p>
+            <p><a class="btn btn-warning" href ="#">Подробнее </a></p>
+            
+        </div>    
+            }
+    }
+</div>
+</body>
+
+
+
+
+

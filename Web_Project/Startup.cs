@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web_Project.Manager.INTERF;
+using Web_Project.Manager.Mock;
 
 namespace Web_Project
 {
@@ -23,6 +25,9 @@ namespace Web_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IAFunctions, MFunctionscs>();
+            services.AddTransient<IFunctionsManager, MCatagory>();
+            services.AddMvc();
             services.AddControllersWithViews();
         }
 
@@ -50,7 +55,7 @@ namespace Web_Project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Functions}/{action=List}/{id?}");
             });
         }
     }
