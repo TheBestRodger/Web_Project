@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,28 +11,46 @@ using System.Linq;
 using System.Threading.Tasks;
 using Web_Project.Manager.INTERF;
 using Web_Project.Manager.Mock;
+using Web_Project.Storage;
+using Web_Project.Storage.Repository;
 
 namespace Web_Project
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        private IConfigurationRoot _confstring;
 
-        public IConfiguration Configuration { get; }
+        public Startup(IWebHostEnvironment hostEnv)
+        {
+            _confstring = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAFunctions, MFunctionscs>();
-            services.AddTransient<IFunctionsManager, MCatagory>();
+            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confstring.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IAFunctions, FunctionsRepository>();
+            services.AddTransient<IFunctionsManager, CategoryRepository>();
             services.AddMvc();
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
+        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+       // {
+         //   app.UseDeveloperExceptionPage();
+           // app.UseStatusCodePages();
+            //app.UseStaticFiles();
+            //app.UseMvcWithDefaultRoute();
+
+//            using (var scope = app.ApplicationServices.CreateScope())
+  //          {   
+    //            AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+      //          DBObj.initial(content);
+        //    }
+            
+        //}
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -57,6 +76,13 @@ namespace Web_Project
                     name: "default",
                     pattern: "{controller=Functions}/{action=List}/{id?}");
             });
+
+            using var scope = app.ApplicationServices.CreateScope();
+            {
+                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                DBObj.initial(content);
+            }
         }
+
     }
 }
