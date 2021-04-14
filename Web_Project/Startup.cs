@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using Web_Project.Manager.INTERF;
 using Web_Project.Manager.Mock;
 using Web_Project.Storage;
+using Web_Project.Storage.Entity;
 using Web_Project.Storage.Repository;
 
 namespace Web_Project
@@ -31,25 +33,16 @@ namespace Web_Project
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confstring.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAFunctions, FunctionsRepository>();
             services.AddTransient<IFunctionsManager, CategoryRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => NPage.GetCart(sp));
+            
             services.AddMvc();
+
+            services.AddMemoryCache();
+            services.AddSession();
             services.AddControllersWithViews();
         }
-
-
-        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-       // {
-         //   app.UseDeveloperExceptionPage();
-           // app.UseStatusCodePages();
-            //app.UseStaticFiles();
-            //app.UseMvcWithDefaultRoute();
-
-//            using (var scope = app.ApplicationServices.CreateScope())
-  //          {   
-    //            AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
-      //          DBObj.initial(content);
-        //    }
-            
-        //}
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -65,7 +58,7 @@ namespace Web_Project
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
