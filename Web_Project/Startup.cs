@@ -67,7 +67,7 @@ namespace Web_Project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Functions}/{action=List}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             using var scope = app.ApplicationServices.CreateScope();
