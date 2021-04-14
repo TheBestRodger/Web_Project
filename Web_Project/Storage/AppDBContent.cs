@@ -16,6 +16,9 @@ namespace Web_Project.Storage
 
         public DbSet<Functions> Functions { get; set; }
         public DbSet<Category> Category { set; get; }
+        public DbSet<NewPage> PageItem { set; get; }
+
+
 
     }
 }
