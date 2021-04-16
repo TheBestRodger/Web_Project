@@ -21,7 +21,7 @@ namespace Web_Project.Storage
                     new Functions
                     {
                         name = "Сложение",
-                        shortDecs = "1+1 = 2",
+                        shortDecs = "2+2 = 4",
                         longDecs = "не требуется",
                         isFavor = true,
                         img = "/img/1.jpg",
