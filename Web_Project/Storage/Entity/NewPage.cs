@@ -9,7 +9,6 @@ namespace Web_Project.Storage.Entity
     {
         public int id { get; set; }
         public Functions Functions { get; set; }
-     
         public string WebPage { get; set; }
     }
 }

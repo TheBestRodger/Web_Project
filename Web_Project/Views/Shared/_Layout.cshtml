@@ -17,14 +17,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index" asp-ac>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Functions" asp-action="List" asp-ac>Все</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index" asp-ac>Математика</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index" asp-ac>Физика</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-controller="PageCart" asp-action="Index" asp-ac>Добавленное</a>
                         </li>
                     </ul>
                     <form class="d-flex">

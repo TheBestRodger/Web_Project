@@ -5,6 +5,5 @@
     <h2>@Model.name</h2>
     <p> @Model.shortDecs</p>
     <p> @Model.longDecs</p>
-    <p><a class="btn btn-warning" href="#">Решить </a></p>
-
+    <p><a class="btn btn-warning" asp-controller="PageCart" asp-action="addToCart" asp-route-id ="@Model.id">ЖМЯК</a></p>
 </div>
