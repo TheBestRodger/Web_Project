@@ -2,10 +2,10 @@
 <div class="container">
     @foreach(var el in Model.npage.listNewPage)
             {
-                <div class="alert-warning mt-2">
-                    <b>Вырожение </b> @el.Functions.name<br/>
+                <div class="alert-warning mt-10">
+                    <b>Выражение</b> @el.Functions.name<br/>
                 </div>
             }
     <hr />
-    <div class=" btn btn-danger" asp-controller ="Order">Выполнить</div>
+    <a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Checkout">ЧОП</a>
     </div>

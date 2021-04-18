@@ -33,7 +33,7 @@ namespace Web_Project
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confstring.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAFunctions, FunctionsRepository>();
             services.AddTransient<IFunctionsManager, CategoryRepository>();
-
+            services.AddTransient<IAllOrders, OrdersRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => NPage.GetCart(sp));
             
@@ -65,9 +65,9 @@ namespace Web_Project
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+               endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             using var scope = app.ApplicationServices.CreateScope();

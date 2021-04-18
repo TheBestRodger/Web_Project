@@ -20,12 +20,10 @@ namespace Web_Project.Controllers
             _allCat = iAllCat;
 
         }
-
+        
         public ViewResult List()
         {
 
-            
-            //var fun = _allFun.Functions;
             ViewBag.Title = "Страница с функциями";
             FunctionsListViewModel obj = new FunctionsListViewModel();
             obj.AllFun = _allFun.Functions;
