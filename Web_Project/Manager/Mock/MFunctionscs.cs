@@ -14,24 +14,24 @@ namespace Web_Project.Manager.Mock
                 return new List<Functions>
                 {
                     new Functions{ 
-                        name = "Сложение", 
-                        shortDecs = "1+1 = 2", 
-                        longDecs = "не требуется", 
+                        name = "Алгебра", 
+                        shortDecs = "", 
+                        longDecs = "", 
                         isFavor =  true, img = "/img/1.jpg", 
                         Category = _functions.AllCategories.First()
                     },
                      new Functions{
-                        name = "Архимед",
-                        shortDecs = "F = rgh",
-                        longDecs = "r - плотность вещества, g - 9.98, h - высота",
-                        isFavor =  false, img = "/img/1.jpg",
+                        name = "Геометрия",
+                        shortDecs = "",
+                        longDecs = "",
+                        isFavor =  false, img = "/img/2.jpg",
                         Category = _functions.AllCategories.Last()
                     },
                       new Functions{
-                        name = "Вычитание",
-                        shortDecs = "1-1 = 0",
-                        longDecs = "не требуется",
-                        isFavor =  true, img = "/img/1.jpg",
+                        name = "Физика",
+                        shortDecs = "",
+                        longDecs = "",
+                        isFavor =  true, img = "/img/3.jpg",
                         Category = _functions.AllCategories.First()
                     },
                      new Functions{
