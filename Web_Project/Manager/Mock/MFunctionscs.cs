@@ -34,29 +34,6 @@ namespace Web_Project.Manager.Mock
                         isFavor =  true, img = "/img/3.jpg",
                         Category = _functions.AllCategories.First()
                     },
-                     new Functions{
-                        name = "Кинетическая энергия",
-                        shortDecs = "E = MV*MV / 2",
-                        longDecs = "M - масса тела, V - скорость тела",
-                        isFavor =  false, img = "/img/1.jpg",
-                        Category = _functions.AllCategories.Last()
-                    },
-                       new Functions{
-                        name = "Умножение",
-                        shortDecs = "2*3 = 6",
-                        longDecs = "не требуется",
-                        isFavor =  true, img = "/img/1.jpg",
-                        Category = _functions.AllCategories.First()
-                    },
-                     new Functions{
-                        name = "Кинетическая энергия",
-                        shortDecs = "E = mgh",
-                        longDecs = "m - масса тела, g - 9.98, h - высота",
-                        isFavor =  false, img = "/img/1.jpg",
-                        Category = _functions.AllCategories.Last()
-                    }
-
-
                 };
             }
             }
