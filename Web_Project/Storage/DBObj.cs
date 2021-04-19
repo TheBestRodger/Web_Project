@@ -33,7 +33,7 @@ namespace Web_Project.Storage
                          shortDecs = "F = rgh",
                          longDecs = "r - плотность вещества, g - 9.98, h - высота",
                          isFavor = false,
-                         img = "/img/1.jpg",
+                         img = "/img/2.jpg",
                          Category = Categories["Физика"]
                      },
                       new Functions
@@ -42,7 +42,7 @@ namespace Web_Project.Storage
                           shortDecs = "1-1 = 0",
                           longDecs = "не требуется",
                           isFavor = true,
-                          img = "/img/1.jpg",
+                          img = "/img/3.jpg",
                           Category = Categories["Математика"]
                       },
                      new Functions
@@ -60,7 +60,7 @@ namespace Web_Project.Storage
                            shortDecs = "2*3 = 6",
                            longDecs = "не требуется",
                            isFavor = true,
-                           img = "/img/1.jpg",
+                           img = "/img/2.jpg",
                            Category = Categories["Математика"]
                        },
                      new Functions
@@ -69,7 +69,7 @@ namespace Web_Project.Storage
                          shortDecs = "E = mgh",
                          longDecs = "m - масса тела, g - 9.98, h - высота",
                          isFavor = false,
-                         img = "/img/1.jpg",
+                         img = "/img/3.jpg",
                          Category = Categories["Физика"]
                      }
 
