@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Identity;
 namespace Web_Project.Storage.Entity
 {
-    public class Order
+    public class Order : IdentityUser
     {
         [BindNever]
         public int id { get; set; }
@@ -26,12 +26,13 @@ namespace Web_Project.Storage.Entity
         [Display(Name = "Телефон")]
         [DataType(DataType.PhoneNumber)]
         [StringLength(11)]
-        [Required(ErrorMessage = "Не верный телефон")]
+        [Required(ErrorMessage = "Неверный телефон")]
         public string phone { get; set; }
         [Display(Name ="Email")]
         [DataType(DataType.EmailAddress)]
         [StringLength(30)]
         [Required(ErrorMessage = "Email больше 30 символов")]
+        [Key]
         public string mail { get; set; }
         [BindNever]
         [ScaffoldColumn(false)]

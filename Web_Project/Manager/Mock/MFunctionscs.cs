@@ -49,7 +49,7 @@ namespace Web_Project.Manager.Mock
                         Category = _functions.AllCategories.First()
                     },
                      new Functions{
-                        name = "Кинетическая энергия",
+                        name = "Потенциальная энергия",
                         shortDecs = "E = mgh",
                         longDecs = "m - масса тела, g - 9.98, h - высота",
                         isFavor =  false, img = "/img/1.jpg",

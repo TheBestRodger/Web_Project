@@ -15,6 +15,7 @@ using Web_Project.Manager.Mock;
 using Web_Project.Storage;
 using Web_Project.Storage.Entity;
 using Web_Project.Storage.Repository;
+using Microsoft.AspNetCore.Identity;
 
 namespace Web_Project
 {
@@ -26,6 +27,7 @@ namespace Web_Project
         {
             _confstring = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -41,6 +43,14 @@ namespace Web_Project
 
             services.AddMemoryCache();
             services.AddSession();
+            services.AddControllersWithViews();
+
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<Order, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddControllersWithViews();
         }
 
@@ -60,8 +70,9 @@ namespace Web_Project
             app.UseStaticFiles();
             app.UseSession();
             app.UseRouting();
-
+            app.UseAuthentication();   
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
