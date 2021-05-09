@@ -10,8 +10,8 @@ using Web_Project.Storage;
 namespace Web_Project.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20210417214720_Oredrs")]
-    partial class Oredrs
+    [Migration("20210417214720_Orders")]
+    partial class Orders
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

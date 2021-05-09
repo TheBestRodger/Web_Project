@@ -65,7 +65,7 @@ namespace Web_Project.Storage
                        },
                      new Functions
                      {
-                         name = "Кинетическая энергия",
+                         name = "Потенциальная энергия",
                          shortDecs = "E = mgh",
                          longDecs = "m - масса тела, g - 9.98, h - высота",
                          isFavor = false,
