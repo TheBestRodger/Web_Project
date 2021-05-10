@@ -8,8 +8,10 @@ namespace Web_Project.Manager.INTERF
 {
    public interface IAFunctions
     {
-       IEnumerable<Functions> Functions { get;}
-       IEnumerable<Functions> getLatFunctions { get; }
+        IEnumerable<Functions> Functions { get;}
+        IEnumerable<Functions> getLatFunctions { get; }
+        IEnumerable<Functions> MathCat { get; }
+        IEnumerable<Functions> PhyCat { get; }
         Functions getFun(int funId);
     }
 }

@@ -61,6 +61,11 @@ namespace Web_Project.Manager.Mock
             }
             }
         public IEnumerable<Functions> getLatFunctions { get ;set; }
+
+        public IEnumerable<Functions> MathCat { get; set; }
+
+        public IEnumerable<Functions> PhyCat { get; set; }
+
         public Functions getFun(int funId)
         {
             throw new NotImplementedException();

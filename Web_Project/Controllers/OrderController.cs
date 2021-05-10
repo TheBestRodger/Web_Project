@@ -33,6 +33,7 @@ namespace Web_Project.Controllers
                 Order user = new Order { mail = order.mail, id = order.id, name = order.name,
                 surname=order.surname, adress=order.adress, phone=order.phone};
                 
+
                 //добавляем пользователя
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)

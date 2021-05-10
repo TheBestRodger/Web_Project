@@ -16,9 +16,5 @@ namespace Web_Project.Storage.Entity
         public bool isFavor { get; set; }
         public int CaregoryId { get; set; }
         public virtual Category Category { get; set;}
-
-   
-
-
     }
 }
