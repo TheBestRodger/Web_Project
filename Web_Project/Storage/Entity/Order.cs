@@ -34,6 +34,18 @@ namespace Web_Project.Storage.Entity
         [Required(ErrorMessage = "Email больше 30 символов")]
         [Key]
         public string mail { get; set; }
+
+        [Required]
+        [Display(Name = "Придумайте пароль")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Повторите пароль")]
+        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
+        [DataType(DataType.Password)]
+        public string PasswordConfirm { get; set; }
+
         [BindNever]
         [ScaffoldColumn(false)]
         public DateTime ordertime { get; set; }
