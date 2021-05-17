@@ -1,9 +1,8 @@
 ﻿@model Functions
 
 <div class="col-lg-4">
-    <img class="img-thumbnail" src="@Model.img" alt="@Model.name" />
+    <a class="d-block" href="https://localhost:44393/PageCart/Index">
+        <img class="img-thumbnail mb-3" srcset="" src="@Model.img" alt="" width="480" height="300" loading="lazy">
+    </a>
     <h2>@Model.name</h2>
-    <p> @Model.shortDecs</p>
-    <p> @Model.longDecs</p>
-    <p><a class="btn btn-warning" asp-controller="PageCart" asp-action="addToCart" asp-route-id ="@Model.id">ЖМЯК</a></p>
 </div>
