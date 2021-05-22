@@ -17,13 +17,12 @@ namespace Web_Project.Controllers
         {
             _funrep = funrep;
         }
-        public ViewResult Index()
-        {
+        public IActionResult Index()
+        {   
             var homefun = new HomeViewModel
             {
                 favfunctions = _funrep.getLatFunctions
-            };
-
+            };           
             return View(homefun);
         }
 

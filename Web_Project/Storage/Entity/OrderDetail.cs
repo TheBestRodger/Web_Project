@@ -8,7 +8,8 @@ namespace Web_Project.Storage.Entity
 {
     public class OrderDetail
     {   [Required]
-        public int id { get; set; }
+        [Key]
+        public int id1 { get; set; }
         [Required]
         public int OrdeID { get; set; }
         [Required]
