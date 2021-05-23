@@ -1,0 +1,118 @@
+﻿
+<body>
+    <div class="row mt-5 mb-2">
+        @{
+            foreach (Functions fun in Model.favfunctions)
+            {
+                @Html.Partial("AllFun", fun)
+            }
+        }
+    </div>
+    <article class="ref_cat">
+        <div align="center">
+            <h1>Решение СЛАУ методом Гаусса</h1>
+        </div>
+        <p>
+            <b>Смысл метода:</b> последовательно исключаем переменную за переменной, пока в одной из строк не будет однозначно определена переменная x<sub>i</sub>. Идею можно проиллюстрировать на простом примере:
+            <br><code>&nbsp;x<sub>1</sub> - x<sub>2</sub> = 3</code>
+            <br><code>-x<sub>1</sub> + 2x<sub>2</sub> = 1</code>
+            <br>=========== (складываем строки)
+            <br><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-x<sub>2</sub> + 2x<sub>2</sub>= 3 + 1 = 4</code> или <code>x<sub>2</sub> = 4</code>
+            <br>Откуда, <code>x<sub>1</sub> = 7</code>
+        </p><p>
+            <i>Суть метода</i> можно понять, проанализировав пример решения.
+
+        </p><p>
+            <span id="instruction"><h5>Пример</h5></span>
+            <br>2x<sub>1</sub>-x<sub>2</sub>=0
+            <br>-x<sub>1</sub>+x<sub>2</sub>+4x<sub>3</sub>=13
+            <br>x<sub>1</sub>+2x<sub>2</sub>+3x<sub>3</sub>=14
+        </p><p>
+            <em>Решение</em>.
+            <br>Запишем систему в виде расширенной матрицы:
+        </p><table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>2</td><td>-1</td><td>0</td></tr><tr><td>-1</td><td>1</td><td>4</td></tr><tr><td>1</td><td>2</td><td>3</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                    <td> </td>
+                    <td style="text-align:center"><table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>0</td></tr><tr><td>13</td></tr><tr><td>14</td></tr></tbody></table></td><td></td></tr></tbody></table></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Далее умножаем 2-ую строку на (2) и добавляем к первой:
+        </p><table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table class="table table-bordered"><tbody><tr><td>0</td><td>1</td><td>8</td></tr><tr><td>-1</td><td>1</td><td>4</td></tr><tr><td>1</td><td>2</td><td>3</td></tr></tbody></table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td> </td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>26</td></tr><tr><td>13</td></tr><tr><td>14</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Добавим 3-ую строку к 2-ой:
+        </p><table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>0</td><td>1</td><td>8</td></tr><tr><td>0</td><td>3</td><td>7</td></tr><tr><td>1</td><td>2</td><td>3</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                    <td> </td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>26</td></tr><tr><td>27</td></tr><tr><td>14</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Умножим первую строчку на (3), 2-ую строку умножаем на (-1). Следующее действие: складываем первую и вторую строки:
+        </p><table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>0</td><td>0</td><td>17</td></tr><tr><td>0</td><td>3</td><td>7</td></tr><tr><td>1</td><td>2</td><td>3</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                    <td> </td>
+                    <td style="text-align:center">
+                        <table><tbody><tr><td><table class="table table-bordered"><tbody><tr><td>51</td></tr><tr><td>27</td></tr><tr><td>14</td></tr></tbody></table></td><td></td></tr></tbody></table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Теперь исходную систему можно записать как:
+            <br><code>x<sub>3</sub> = 51/17</code>
+            <br><code>x<sub>2</sub> = [27 - 7x<sub>3</sub>]/3</code>
+            <br><code>x<sub>1</sub> = [14 - (2x<sub>2</sub> + 3x<sub>3</sub>)]</code>
+            <br>Из 1-ой строки выражаем <var>x<sub>3</sub></var>: <code>51/17 = 3</code>
+            <br>Из 2-ой строки выражаем <var>x<sub>2</sub></var>: <code>(27 - 7*3)/3 = 2</code>
+            <br>Из 3-ой строки выражаем <var>x<sub>1</sub></var>: <code>(14 - 2*2 - 3*3) = 1</code>
+        </p><p>
+            <em>Вывод</em>: метод Гаусса является достаточно простым методом при небольшом количестве переменных и позволяет найти точное значение переменных. Процесс отыскания переменных можно упростить, если каждый раз сортировать столбцы по возрастанию.
+        </p>
+    </article>
+</body>
