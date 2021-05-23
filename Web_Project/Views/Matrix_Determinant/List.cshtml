@@ -1,0 +1,116 @@
+﻿
+<body>
+    <article class="ref_cat">
+        <div align="center">
+            <h1>Определитель матрицы</h1>
+        </div>
+        Определитель равен сумме произведений элементов какой-нибудь строки или столбца на их алгебраические дополнения, т.е. <img itemprop="image" width="283" height="39" src="https://www.semestr.ru/images/math/kramer/k5_image003.gif" alt="Формула определителя" title="Формула определителя" class="img-online">, где i<sub>0</sub> – фиксировано.
+        <br>Выражение называют разложением определителя <var>D</var> по элементам строки с номером i<sub>0</sub>.
+        Вычислить определитель можно будет двумя способами: <em>по определению</em> и <em>разложением по строке или столбцу</em>.
+        <div align="center">
+            <h3>Алгоритм нахождения определителя</h3>
+        </div>
+        <ol>
+            <li>
+                Для матриц порядка <code>n=2</code> определитель вычисляется по формуле: <code>Δ=a<sub>11</sub>*a<sub>22</sub>-a<sub>12</sub>*a<sub>21</sub></code>
+            </li>
+            <li>
+                Для матриц порядка <code>n=3</code> определитель вычисляется через алгебраические дополнения или <em>методом Саррюса</em>.
+            </li>
+            <li>
+                Матрица, имеющая размерность больше трех, раскладывается на алгебраические дополнения, для которых вычисляются свои определители (миноры). Например, <em>определитель матрицы 4 порядка</em> находится через разложение по строкам или столбцам.
+            </li>
+        </ol>
+        <div align="center">
+            <h3>Методы вычислений определителей</h3>
+        </div>
+        <em>Нахождение определителя через алгебраические дополнения</em> является распространенным методом. Его упрощенным вариантом является вычисление определителя правилом Саррюса. Однако при большой размерности матрицы, используют следующие методы:
+        <ol>
+            <li>
+                вычисление определителя методом понижения порядка
+            </li>
+            <li>
+                вычисление определителя методом Гаусса (через приведение матрицы к треугольному виду).
+            </li>
+            <li>
+                вычисление определителя методом декомпозиции.
+            </li>
+        </ol>
+        <br>В <span class="msoffice">Excel</span> для расчета определителя используется функция <code>=МОПРЕД(диапазон ячеек)</code>.
+        <div align="center">
+            <h3>Прикладное использование определителей</h3>
+            </div>
+            Вычисляют определители, как правило, для конкретной системы, заданной в виде квадратной матрицы. Рассмотрим некоторые виды задач на <em>нахождение определителя матрицы</em>.
+            <ol>
+                <li>
+                    Решение СЛАУ. Если определитель системы не равен нулю (Δ ≠ 0), система имеет решение.
+                </li>
+                <li>
+                    При вычислении ранга матрицы также требуется наличие минора (текущего определителя для <var>i</var>-ой строки и <var>j</var>-го столбца), не равного нулю.
+                </li>
+                <li>
+                    Алгоритм нахождения обратной матрицы включает расчет определителя: если определитель равен нулю, обратной матрицы не существует.
+                </li>
+                <li>
+                    Определитель используется при вычислении площади треугольника: <img class="img-online" width="156" height="51" src="https://www.semestr.ru/images/math/line/l2_image001.gif" alt="Площадь треугольника">.
+                </li>
+                <li>
+                    Значение определителя служить оценкой при максимизации удельного показателя перевозок.
+                </li>
+                <li>
+                    По знаку определителя устанавливают вид функции (выпуклая или вогнутая) при расчете матрицы Гессе.
+                </li>
+                <li>
+                    Отношение определителей корреляционных матриц позволяет находить множественный коэффициент корреляции и коэффициент детерминации.
+                </li>
+            </ol>
+
+            Иногда требуется найти неизвестный параметр <var>a</var>, при котором определитель равнялся бы нулю. Для этого необходимо составить уравнение определителя (например, по <em>правилу треугольников</em>) и, приравняв его к <var>0</var>, вычислить параметр <var>a</var>.
+            <table class="table-center"><tbody><tr><td> </td><td><table class="table table-bordered"><tbody><tr><td>1</td><td>1</td><td>2</td></tr><tr><td>3</td><td>a</td><td>1</td></tr><tr><td>1</td><td>0</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            Используем разложение по первой строке:
+            <br><code>Δ = 1(a*(-2)-0*1) -1(3*(-2)-1*1) + 2(3*0-1*a) = -2a+7-2a = -4a+7 = 0</code>. Откуда a=<sup>7</sup>/<sub>4</sub>
+
+            <p>
+                <span id="instruction"><h5>Пример</h5></span> Найти определитель матрицы:
+            </p><table class="table-center"><tbody><tr><td>A = </td><td><table class="table table-bordered"><tbody><tr><td>1</td><td>0</td><td>-2</td></tr><tr><td>3</td><td>2</td><td>1</td></tr><tr><td>1</td><td>2</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+
+            <br><b>Найдем определитель, использовав разложение по столбцам (по первому столбцу):</b>
+            <br>Минор для (1,1): Вычеркиваем из матрицы первую строку и первый столбец.
+            <table class="table table-bordered">
+                <tbody><tr><td align="center" class="text1">1</td><td align="center" class="text1">0</td><td align="center" class="text1">-2</td></tr><tr><td align="center" class="text1">3</td><td align="center"> 2</td><td align="center"> 1</td></tr><tr><td align="center" class="text1">1</td><td align="center"> 2</td><td align="center"> -2</td></tr></tbody>
+            </table>
+
+            <br>Получаем:
+            <table><tbody><tr><td>∆ <sub>1,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>2</td><td>1</td></tr><tr><td>2</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            <br>Найдем определитель для этого минора. <code>∆<sub>1,1</sub> = (2 • (-2)-2 • 1) = -6</code>.
+
+            <p>
+                Определим минор для (2,1): для этого вычеркиваем из матрицы вторую строку и первый столбец.
+            </p><table class="table table-bordered"><tbody><tr><td align="center" class="text1">1</td><td align="center"> 0</td><td align="center"> -2</td></tr><tr><td align="center" class="text1">3</td><td align="center" class="text1">2</td><td align="center" class="text1">1</td></tr><tr><td align="center" class="text1">1</td><td align="center"> 2</td><td align="center"> -2</td></tr></tbody></table>
+            Получаем:
+            <table class="table-center"><tbody><tr><td>∆ <sub>2,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>0</td><td>-2</td></tr><tr><td>2</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            Найдем определитель для этого минора.<code>∆<sub>2,1</sub> = (0 • (-2)-2 • (-2)) = 4</code>. Минор для (3,1): Вычеркиваем из матрицы 3-ю строку и 1-й столбец.
+            <table class="table table-bordered"><tbody><tr><td align="center" class="text1">1</td><td align="center"> 0</td><td align="center"> -2</td></tr><tr><td align="center" class="text1">3</td><td align="center"> 2</td><td align="center"> 1</td></tr><tr><td align="center" class="text1">1</td><td align="center" class="text1">2</td><td align="center" class="text1">-2</td></tr></tbody></table>
+
+            <br>Получаем:
+            <table><tbody><tr><td>∆ <sub>3,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>0</td><td>-2</td></tr><tr><td>2</td><td>1</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            <br>Найдем определитель для этого минора.<code>∆<sub>3,1</sub> = (0 • 1-2 • (-2)) = 4</code>
+            <br>Главный определитель равен: <code>∆ = (1 • (-6)-3 • 4+1 • 4) = -14</code>
+
+                <br><b>Найдем определитель, использовав разложение по строкам (по первой строке):</b></br>
+                <br>Минор для (1,1): Вычеркиваем из матрицы первую строку и первый столбец.
+            </p><table class="table table-bordered"><tbody><tr><td align="center" class="text1">1</td><td align="center" class="text1">0</td><td align="center" class="text1">-2</td></tr><tr><td align="center" class="text1">3</td><td align="center"> 2</td><td align="center"> 1</td></tr><tr><td align="center" class="text1">1</td><td align="center"> 2</td><td align="center"> -2</td></tr></tbody></table>
+            <br>Получаем:
+            <table><tbody><tr><td>∆ <sub>1,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>2</td><td>1</td></tr><tr><td>2</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            <br>Найдем определитель для этого минора.<code>∆<sub>1,1</sub> = (2 • (-2)-2 • 1) = -6</code>. Минор для (1,2): Вычеркиваем из матрицы 1-ю строку и 2-й столбец.
+            <table class="table table-bordered"><tbody><tr><td align="center" class="text1">1</td><td align="center" class="text1">0</td><td align="center" class="text1">-2</td></tr><tr><td align="center"> 3</td><td align="center" class="text1">2</td><td align="center"> 1</td></tr><tr><td align="center"> 1</td><td align="center" class="text1">2</td><td align="center"> -2</td></tr></tbody></table>
+            Получаем:
+            <table><tbody><tr><td>∆ <sub>2,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>3</td><td>1</td></tr><tr><td>1</td><td>-2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            Вычислим определитель для этого минора.<code>∆<sub>1,2</sub> = (3 • (-2)-1 • 1) = -7</code>. И чтобы найти минор для (1,3) вычеркиваем из матрицы первую строку и третий столбец.
+            <table class="table table-bordered"><tbody><tr><td align="center" class="text1">1</td><td align="center" class="text1">0</td><td align="center" class="text1">-2</td></tr><tr><td align="center"> 3</td><td align="center"> 2</td><td align="center" class="text1">1</td></tr><tr><td align="center"> 1</td><td align="center"> 2</td><td align="center" class="text1">-2</td></tr></tbody></table>
+            <br>Получаем:
+            <table><tbody><tr><td>∆ <sub>3,1</sub> = </td><td><table class="table table-bordered"><tbody><tr><td>3</td><td>2</td></tr><tr><td>1</td><td>2</td></tr></tbody></table></td><td></td><td></td></tr></tbody></table>
+            Найдем определитель для этого минора. <code>∆<sub>1,3</sub> = (3 • 2-1 • 2) = 4</code>
+            <br>Находим главный определитель: <code>∆ = (1 • (-6)-0 • (-7)+(-2 • 4)) = -14</code>
+    </article>
+</body>

@@ -20,57 +20,57 @@ namespace Web_Project.Storage
                 content.AddRange(
                     new Functions
                     {
-                        name = "Сложение",
-                        shortDecs = "2+2 = 4",
-                        longDecs = "не требуется",
+                        name = "Градиент",
+                        shortDecs = "https://localhost:44393/Gradient/List",
+                        longDecs = "",
                         isFavor = true,
-                        img = "/img/1.jpg",
+                        img = "/img/7.jpg",
                         Category = Categories["Математика"]
                     },
                      new Functions
                      {
-                         name = "Архимед",
-                         shortDecs = "F = rgh",
-                         longDecs = "r - плотность вещества, g - 9.98, h - высота",
-                         isFavor = false,
-                         img = "/img/2.jpg",
-                         Category = Categories["Физика"]
+                         name = "Производная",
+                         shortDecs = "https://localhost:44393/Derivative/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/8.jpg",
+                         Category = Categories["Математика"]
                      },
                       new Functions
                       {
-                          name = "Вычитание",
-                          shortDecs = "1-1 = 0",
-                          longDecs = "не требуется",
+                          name = "Частные производные",
+                          shortDecs = "https://localhost:44393/Partial_Derivatives/List",
+                          longDecs = "",
                           isFavor = true,
-                          img = "/img/3.jpg",
+                          img = "/img/9.jpg",
                           Category = Categories["Математика"]
                       },
                      new Functions
                      {
-                         name = "Кинетическая энергия",
-                         shortDecs = "E = MV*MV / 2",
-                         longDecs = "M - масса тела, V - скорость тела",
-                         isFavor = false,
-                         img = "/img/1.jpg",
-                         Category = Categories["Физика"]
+                         name = "Метод Зейделя",
+                         shortDecs = "https://localhost:44393/Seidel_Method/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/4.jpg",
+                         Category = Categories["Математика"]
                      },
                        new Functions
                        {
-                           name = "Умножение",
-                           shortDecs = "2*3 = 6",
-                           longDecs = "не требуется",
+                           name = "Метод Гаусса",
+                           shortDecs = "https://localhost:44393/Gauss_Method/List",
+                           longDecs = "",
                            isFavor = true,
-                           img = "/img/2.jpg",
+                           img = "/img/5.jpg",
                            Category = Categories["Математика"]
                        },
                      new Functions
                      {
-                         name = "Потенциальная энергия",
-                         shortDecs = "E = mgh",
-                         longDecs = "m - масса тела, g - 9.98, h - высота",
-                         isFavor = false,
-                         img = "/img/3.jpg",
-                         Category = Categories["Физика"]
+                         name = "Определитель матрицы",
+                         shortDecs = "https://localhost:44393/Matrix_Determinant/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/6.jpg",
+                         Category = Categories["Математика"]
                      }
 
                     );
