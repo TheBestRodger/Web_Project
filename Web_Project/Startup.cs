@@ -52,7 +52,7 @@ namespace Web_Project
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<Order, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>();
