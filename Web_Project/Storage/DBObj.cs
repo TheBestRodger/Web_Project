@@ -71,8 +71,61 @@ namespace Web_Project.Storage
                          isFavor = true,
                          img = "/img/6.jpg",
                          Category = Categories["Математика"]
+                     },
+                     new Functions
+                     {
+                         name = "Кинетическая энергия",
+                         shortDecs = "https://localhost:44393/Kinetic_Energy/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/23.jpg",
+                         Category = Categories["Физика"]
+                     },                     
+                     new Functions
+                     {
+                         name = "Сила Архимеда",
+                         shortDecs = "https://localhost:44393/Power_Archimedes/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/24.jpg",
+                         Category = Categories["Физика"]
+                     },
+                     new Functions
+                     {
+                         name = "Закон Гука",
+                         shortDecs = "https://localhost:44393/Hooke_Law/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/25.jpg",
+                         Category = Categories["Физика"]
+                     },
+                     new Functions
+                     {
+                         name = "Сила тока",
+                         shortDecs = "https://localhost:44393/Current_Strength/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/26.jpg",
+                         Category = Categories["Физика"]
+                     },
+                     new Functions
+                     {
+                         name = "Импульс",
+                         shortDecs = "https://localhost:44393/Momentum/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/27.jpg",
+                         Category = Categories["Физика"]
+                     },
+                     new Functions
+                     {
+                         name = "Преломление света",
+                         shortDecs = "https://localhost:44393/Refraction_Light/List",
+                         longDecs = "",
+                         isFavor = true,
+                         img = "/img/28.jpg",
+                         Category = Categories["Физика"]
                      }
-
                     );
             }
 
