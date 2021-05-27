@@ -1,5 +1,76 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<p>Куб</p>
+a
+<input id="num1" />
+<button onclick="func()">Выполнить.</button>
+<p>
+    Объем
+    V =
+<p id="D"></p>
+<script>
+    function func() {
+        var D;
+        var num1 = Number(document.getElementById("num1").value);
+        D = num1 * num1 * num1;
+        document.getElementById("D").innerHTML = D;
+    }
+</script>
+<p>
+    Параллелепипед
+    a
+    <input id="num11" />
+    b
+    <input id="num22" />
+    с
+    <input id="num33" />
+    <button onclick="func1()">Выполнить.</button>
+</p>
+<p>
+    Объем
+    V =
+<p id="D1"></p>
+<script>
+    function func1() {
+        var D1;
+        var num1 = Number(document.getElementById("num11").value);
+        var num2 = Number(document.getElementById("num22").value);
+        var num3 = Number(document.getElementById("num33").value);
+        D1 = num1 * num2 * num3;
+        document.getElementById("D1").innerHTML = D1;
+    }
+</script>
+
+Шар
+R
+<input id="num11211" />
+<button onclick="func2()">Выполнить.</button>
+Объем
+V = <p id="V"></p>
+<script>
+    function func2() {
+        var V;
+        var num1 = Number(document.getElementById("num11211").value);
+        V = (4 / 3) * (Math.PI * num1 * num1 * num1);
+        document.getElementById("V").innerHTML = V;
+    }
+</script>
+<p>
+    Цилиндер
+    R
+    <input id="num11111" />
+    h
+    <input id="num22222" />
+    <button onclick="func3()">Выполнить.</button>
+</p>
+<p>
+    Объем
+    V =
+<p id="V1"></p>
+<script>
+    function func3() {
+        var V1;
+        var num1 = Number(document.getElementById("num11111").value);
+        var num2 = Number(document.getElementById("num22222").value);
+        V1 = Math.PI * num1 * num1 * num2;
+        document.getElementById("V1").innerHTML = V1;
+    }
+</script>

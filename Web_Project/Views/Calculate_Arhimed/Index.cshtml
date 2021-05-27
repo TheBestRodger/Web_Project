@@ -1,37 +1,21 @@
 ﻿g
 <input id="num1" />
-
-<div id="operator_btns">
-    <button id="times" class="operator" onclick="op='*'">x</button>
-</div>
 p
 <input id="num2" />
-<div id="operator_btns">
-    <button id="times" class="operator" onclick="op='*'">x</button>
-</div>
 h
 <input id="num3" />
-
 <button onclick="func()">Выполнить.</button>
-
 <p id="result"></p>
 
 
 <script>
-    var op; //выбранный оператор
+
     function func() {
         var result;
         var num1 = Number(document.getElementById("num1").value);
         var num2 = Number(document.getElementById("num2").value);
         var num3 = Number(document.getElementById("num3").value);
-        switch (op) {
-            case '*':
-                result = num1 * num2 * num3;
-                break;
-            default:
-                result = 'выберите операцию';
-        }
-
+        result = num1 * num2 * num3;
         document.getElementById("result").innerHTML = result;
     }
 </script>
