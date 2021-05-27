@@ -105,7 +105,7 @@ namespace Web_Project.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Complete", "Order");
         }
     }
 }
