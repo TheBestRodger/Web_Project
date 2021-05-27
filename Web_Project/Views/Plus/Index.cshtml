@@ -1,0 +1,69 @@
+﻿Прямоугольник
+a
+<input id="num1" />
+b
+<input id="num2" />
+<button onclick="func()">Выполнить.</button>
+Площадь
+S = <p id="D"></p>
+<script>
+    function func() {
+        var D;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        D = num1 * num2;
+        document.getElementById("D").innerHTML = D;
+    }
+</script>
+Трапеция
+a
+<input id="num11" />
+b
+<input id="num22" />
+h
+<input id="num33" />
+<button onclick="func1()">Выполнить.</button>
+Площадь
+S = <p id="D1"></p>
+<script>
+    function func1() {
+        var D1;
+        var num1 = Number(document.getElementById("num11").value);
+        var num2 = Number(document.getElementById("num22").value);
+        var num3 = Number(document.getElementById("num33").value);
+        D1 = ((num1 * num2) / 2) * num3;
+        document.getElementById("D1").innerHTML = D1;
+    }
+</script>
+Окружность/Круг
+R
+<input id="num111" />
+alpha 
+<input id="num222" />
+<button onclick="func2()">Выполнить.</button>
+Площадь круга
+S = <p id="S"></p>
+Длина окружности
+C = <p id="C"></p>
+Площадь сектора
+S1 = <p id="S1"></p>
+Длина дуги
+L = <p id="L"></p>
+<script>
+    function func2() {
+        var L;
+        var C;
+        var S1;
+        var S;
+        var num1 = Number(document.getElementById("num111").value);
+        var num2 = Number(document.getElementById("num222").value);
+        L = ((Math.PI * num1) / 180) * num2;
+        C = 2 * Math.PI * num1;
+        S1 = ((Math.PI * num1 * num1) / 360) * num2
+        S = Math.PI * num1 * num1;
+        document.getElementById("L").innerHTML = L;
+        document.getElementById("C").innerHTML = C;
+        document.getElementById("S1").innerHTML = S1;
+        document.getElementById("S").innerHTML = S;
+    }
+</script>

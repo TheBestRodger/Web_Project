@@ -1,0 +1,24 @@
+﻿m
+<input id="num1" />
+g
+<input id="num2" />
+h
+<input id="num3" />
+<button onclick="func()">Выполнить.</button>
+
+<p id="result"></p>
+
+
+<script>
+    var op; //выбранный оператор
+    function func() {
+        var result;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var num3 = Number(document.getElementById("num2").value);
+        result = num1 * num2 * num3;
+
+
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
