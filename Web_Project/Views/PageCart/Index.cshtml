@@ -2,10 +2,62 @@
 <div class="container">
     @foreach(var el in Model.npage.listNewPage)
             {
-                <div class="alert-warning mt-10">
-                    <b>Выражение</b> @el.Functions.name<br/>
-                </div>
+    <div class="alert-warning mt-10">
+        <b>Выражение</b> @el.Functions.name<br />
+    </div>
             }
     <hr />
     <a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Checkout">ХОП</a>
-    </div>
+
+</div>
+g
+<input id="num1" />
+
+<div id="operator_btns">
+    <button id="plus" class="operator" onclick="op='+'">+</button>
+    <button id="minus" class="operator" onclick="op='-'">-</button>
+    <button id="times" class="operator" onclick="op='*'">x</button>
+    <button id="divide" class="operator" onclick="op='/'">:</button>
+</div>
+p
+<input id="num2" />
+
+h
+<input id="num3" />
+
+<button onclick="func()">Выполнить.</button>
+
+<p id="result"></p>
+
+
+<script>
+    var op; //выбранный оператор
+    function func() {
+        var result;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var num3 = Number(document.getElementById("num3").value);
+        switch (op) {
+            case '+':
+                result = num1 + num2 + num3;
+                break;
+            case '-':
+                result = num1 - num2 + num3;
+                break;
+            case '*':
+                result = num1 * num2 + num3;
+                break;
+            case '/':
+                if (num2) {
+                    result = num1 / num2 / num3;
+                } else {
+                    result = 'бесконечность';
+                }
+                break;
+            default:
+                result = 'выберите операцию';
+        }
+
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
