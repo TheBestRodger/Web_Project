@@ -18,11 +18,15 @@ namespace Web_Project.Controllers
             _funrep = funrep;
         }
         public IActionResult Index()
-        {   
+        {
             var homefun = new HomeViewModel
             {
-                favfunctions = _funrep.getLatFunctions
-            };           
+                favfunctions = _funrep.getLatFunctions               
+            };
+            if (User.Identity.IsAuthenticated)
+            {
+                return Content(User.Identity.Name);
+            }
             return View(homefun);
         }
 
