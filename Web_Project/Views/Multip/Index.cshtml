@@ -1,0 +1,45 @@
+﻿a
+<input id="num1" />
+b
+<input id="num2" />
+c
+<input id="num3" />
+<button onclick="func()">Выполнить.</button>
+
+Коэфициенты квадратного уравнения
+<p id="a"></p> <p id="b"></p><p id="c"></p>
+
+Решение квадратного уравнения
+X1 = <p id="x1"></p>
+X2 = <p id="x2"></p>
+
+
+
+<p id="a"></p> <p id="b"></p><p id="c"></p>
+
+<script>
+    function func() {
+        var D;
+        var x1;
+        var x2;
+        var a;
+        var b;
+        var c;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+        var num3 = Number(document.getElementById("num3").value);
+        a = num1;
+        b = num2;
+        c = num2;
+        D = num2 * num2 - 4 * num1 * num3;
+        x1 = (-1 * num2 + Math.sqrt(D)) / 2 * num1;
+        x2 = (-1 * num2 - Math.sqrt(D)) / 2 * num1;
+
+        document.getElementById("x1").innerHTML = x1;
+        document.getElementById("x2").innerHTML = x2;
+        document.getElementById("a").innerHTML = a;
+        document.getElementById("b").innerHTML = b;
+        document.getElementById("c").innerHTML = c;
+
+    }
+</script>

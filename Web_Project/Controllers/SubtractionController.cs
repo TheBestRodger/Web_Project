@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Web_Project.Controllers
 {
-    public class Partial_DerivativesController : Controller
+    public class SubtractionController : Controller
     {
-        public IActionResult List()
+        public IActionResult Index()
         {
             return View();
         }
